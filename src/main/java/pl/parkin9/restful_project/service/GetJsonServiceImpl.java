@@ -5,12 +5,11 @@ import org.springframework.web.client.RestTemplate;
 import pl.parkin9.restful_project.model.Response;
 
 @Service
-public class ArticleServiceImpl implements ArticleService {
+public class GetJsonServiceImpl implements GetJsonService {
 
     private static final String REST_SERVER_URI = "https://newsapi.org/v2/top-headlines";
     private static final String API_KEY = "apiKey=06d5ed0dc471463898148d34dd489b70";
 
-    //@SuppressWarnings("unchecked")
     public Response listArticles(String country, String category) {
 
         RestTemplate restTemplate = new RestTemplate();

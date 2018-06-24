@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.parkin9.restful_project.model.Response;
-import pl.parkin9.restful_project.service.ArticleService;
+import pl.parkin9.restful_project.service.GetJsonService;
 
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
 
-    private final ArticleService articleService;
+    private final GetJsonService getJsonService;
 
     @Autowired
-    public RestApiController(ArticleService articleService) {
-        this.articleService = articleService;
+    public RestApiController(GetJsonService getJsonService) {
+        this.getJsonService = getJsonService;
     }
 
 //////////////////////////////////////////////////////////////////////////
@@ -25,6 +25,6 @@ public class RestApiController {
     public Response showArticlesList(@PathVariable String country,
                                      @PathVariable String category) {
 
-        return articleService.listArticles(country, category);
+        return getJsonService.listArticles(country, category);
     }
 }
