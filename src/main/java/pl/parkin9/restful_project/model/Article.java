@@ -2,25 +2,33 @@ package pl.parkin9.restful_project.model;
 
 public class Article {
 
+    private Source source;
     private String author;
     private String title;
     private String description;
-    private String date;
-    private String sourceName;
-    private String articleUrl;
-    private String imageUrl;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
 
     public Article() {
     }
 
-    public Article(String author, String title, String description, String date, String sourceName, String articleUrl, String imageUrl) {
+    public Article(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt) {
+        this.source = source;
         this.author = author;
         this.title = title;
         this.description = description;
-        this.date = date;
-        this.sourceName = sourceName;
-        this.articleUrl = articleUrl;
-        this.imageUrl = imageUrl;
+        this.url = url;
+        this.urlToImage = urlToImage;
+        this.publishedAt = publishedAt;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public void setSource(Source source) {
+        this.source = source;
     }
 
     public String getAuthor() {
@@ -47,48 +55,40 @@ public class Article {
         this.description = description;
     }
 
-    public String getDate() {
-        return date;
+    public String getUrl() {
+        return url;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getSourceName() {
-        return sourceName;
+    public String getUrlToImage() {
+        return urlToImage;
     }
 
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
+    public void setUrlToImage(String urlToImage) {
+        this.urlToImage = urlToImage;
     }
 
-    public String getArticleUrl() {
-        return articleUrl;
+    public String getPublishedAt() {
+        return publishedAt;
     }
 
-    public void setArticleUrl(String articleUrl) {
-        this.articleUrl = articleUrl;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
     }
 
     @Override
     public String toString() {
         return "Article{" +
-                "author='" + author + '\'' +
+                "source=" + source +
+                ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", date='" + date + '\'' +
-                ", sourceName='" + sourceName + '\'' +
-                ", articleUrl='" + articleUrl + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
+                ", url='" + url + '\'' +
+                ", urlToImage='" + urlToImage + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
                 '}';
     }
 }
