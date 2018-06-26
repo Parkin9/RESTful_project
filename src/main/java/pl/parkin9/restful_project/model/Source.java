@@ -2,22 +2,22 @@ package pl.parkin9.restful_project.model;
 
 public class Source {
 
-    private Long id;
+    private String id;
     private String name;
 
     public Source() {
     }
 
-    public Source(Long id, String name) {
+    public Source(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

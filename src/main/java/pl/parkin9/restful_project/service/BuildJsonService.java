@@ -5,5 +5,7 @@ import pl.parkin9.restful_project.model.Response;
 
 public interface BuildJsonService {
 
-    MyResponse buildMyResponse(String country, String category, Response responseFrom);
+    MyResponse buildMyResponseByCategory(String country, String category, Response responseFrom);
+
+    MyResponse buildMyResponseBySearchWord(String country, String searchWord, Response responseFrom);
 }

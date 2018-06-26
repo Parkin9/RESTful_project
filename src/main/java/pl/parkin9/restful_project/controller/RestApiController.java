@@ -1,17 +1,14 @@
 package pl.parkin9.restful_project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.parkin9.restful_project.model.MyResponse;
 import pl.parkin9.restful_project.model.Response;
 import pl.parkin9.restful_project.service.BuildJsonService;
 import pl.parkin9.restful_project.service.GetJsonService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/news")
 public class RestApiController {
 
     private final GetJsonService getJsonService;
@@ -25,15 +22,28 @@ public class RestApiController {
 
 //////////////////////////////////////////////////////////////////////////
 
-    @GetMapping("/news/{country}/{category}")
-    public MyResponse showArticlesList(@PathVariable String country,
-                                       @PathVariable String category) {
+    @GetMapping("/{country}/{category}")
+    public MyResponse showAllArticlesByCategory(@PathVariable String country,
+                                                @PathVariable String category) {
 
         // download Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country, category);
 
         // create my Json's response
-        MyResponse myResponse = buildJsonService.buildMyResponse(country, category, responseFrom);
+        MyResponse myResponse = buildJsonService.buildMyResponseByCategory(country, category, responseFrom);
+
+        return myResponse;
+    }
+
+    @PostMapping("/{country}/{searchWord}")
+    public MyResponse showArticlesBySearchWord(@PathVariable String country,
+                                               @PathVariable String searchWord) {
+
+        // download Json from "newsapi.org"
+        Response responseFrom = getJsonService.listArticles(country);
+
+        // create my Json's response
+        MyResponse myResponse = buildJsonService.buildMyResponseBySearchWord(country, searchWord, responseFrom);
 
         return myResponse;
     }

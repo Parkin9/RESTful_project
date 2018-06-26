@@ -1,7 +1,7 @@
 body {
-    background-color: #1a1a1a;
+    background-color: #2a2a2a;
     color: lightgray;
-    font-family: "Arial", sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 #container {
@@ -16,19 +16,40 @@ p {
     padding-bottom: 40px;
 }
 
-#sendButton {
+#sendButtons {
     text-align: center;
     padding-bottom: 20px;
 }
 
-button {
+.send {
     color: black;
-    height: 190px;
-    font-weight: bold;
-    background-color: #df0005;
-    border-radius: 100px;
-    font-size: 28px;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 8px;
+    font-size: 22px;
 }
-button:hover {
-    background-color: red;
+.send:hover {
+    color: black;
+    background-color: lightsteelblue;
+}
+
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+}
+
+#searcher {
+    text-align: center;
+}
+
+#search {
+    color: black;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+#search:hover {
+    color: black;
+    background-color: lightsteelblue;
 }

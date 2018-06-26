@@ -6,16 +6,19 @@ public class MyResponse {
 
     private String country;
     private String category;
-    private int totalResults;
     private ArrayList<Article> articles;
 
     public MyResponse() {
     }
 
-    public MyResponse(String country, String category, int totalResults, ArrayList<Article> articles) {
+    public MyResponse(String country, String category, ArrayList<Article> articles) {
         this.country = country;
         this.category = category;
-        this.totalResults = totalResults;
+        this.articles = articles;
+    }
+
+    public MyResponse(String country, ArrayList<Article> articles) {
+        this.country = country;
         this.articles = articles;
     }
 
@@ -35,14 +38,6 @@ public class MyResponse {
         this.category = category;
     }
 
-    public int getTotalResults() {
-        return totalResults;
-    }
-
-    public void setTotalResults(int totalResults) {
-        this.totalResults = totalResults;
-    }
-
     public ArrayList<Article> getArticles() {
         return articles;
     }
@@ -56,7 +51,6 @@ public class MyResponse {
         return "MyResponse{" +
                 "country='" + country + '\'' +
                 ", category='" + category + '\'' +
-                ", totalResults=" + totalResults +
                 ", articles=" + articles +
                 '}';
     }

@@ -32,10 +32,10 @@ public class RestfulProjectApplicationTests {
 	@Test
     public void getJsonServiceTest() {
 
-	    Assert.assertEquals("ok", getJsonService.listArticles("pl", "technology").getStatus());
+	    Assert.assertEquals("ok", getJsonService.listArticles("pl").getStatus());
 
-	    Assert.assertEquals("Check the REST_SERVER_URI.", "https://newsapi.org/v2/top-headlines", getJsonService.getRestServerUri());
-        Assert.assertEquals("Check the API_KEY.", "apiKey=06d5ed0dc471463898148d34dd489b70", getJsonService.getApiKey());
+	    Assert.assertEquals("https://newsapi.org/v2/top-headlines", getJsonService.getRestServerUri());
+        Assert.assertEquals("apiKey=06d5ed0dc471463898148d34dd489b70", getJsonService.getApiKey());
     }
 
     @Test

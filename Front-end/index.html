@@ -5,6 +5,7 @@
     <title>RESTful_project</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&amp;subset=latin-ext" rel="stylesheet">
     <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
@@ -12,8 +13,22 @@
         <p>
             Powered by <a href="https://newsapi.org/">NewsApi.org</a>
         </p>
-        <div id="sendButton">
-            <button id="send">Don't PRESS!</button>
+        <div id="sendButtons">
+            <button class ="send" id="send1" value="business">Business</button>
+            <button class ="send" id="send2" value="entertainment">Entertainment</button>
+            <button class ="send" id="send3" value="general">General</button>
+            <button class ="send" id="send4" value="health">Health</button>
+            <button class ="send" id="send5" value="science">Science</button>
+            <button class ="send" id="send6" value="sports">Sports</button>
+            <button class ="send" id="send7" value="technology">Technology</button>
+        </div>
+        <div id="searcher">
+            <form action="#" method="post">
+                <label>
+                    <input type="text" id="searchField" name="searchWord"/>
+                </label>
+                <button id="search">Search</button>
+            </form>
         </div>
         <div id="display">
             <table>
