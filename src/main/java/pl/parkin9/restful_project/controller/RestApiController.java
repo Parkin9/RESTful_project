@@ -29,7 +29,7 @@ public class RestApiController {
     public MyResponse showArticlesList(@PathVariable String country,
                                        @PathVariable String category) {
 
-        // download Json
+        // download Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country, category);
 
         // create my Json's response

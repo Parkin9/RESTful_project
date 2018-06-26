@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // a prototyp of "replaceAll" method. Made for formatting JSON
-    // I taked it from stuckoverflow.com.
+    // I took it from stuckoverflow.com.
     String.prototype.replaceAll = function(search, replacement) {
         var target = this;
         return target.split(search).join(replacement);
     };
 
-    $('#send').one('click', function () {
+    $('#send').one('click', function() {
 
         $.ajax({
             url: 'http://localhost:8080/api/news/pl/technology',
@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
             success: function (jsonObj) {
 
                 // test function
-                //console.log(jsonObj);
+                console.log(jsonObj);
 
                 var quantityArticles = jsonObj.totalResults;
                 var articlesList = new Array(quantityArticles);
 
                 // test function
-                //console.log(articlesList);
+                console.log(articlesList);
 
                 for(var i = 0; i < quantityArticles; i++) {
                     articlesList[i] = JSON.stringify(jsonObj.articles[i]).replaceAll(',', '<br/>');
