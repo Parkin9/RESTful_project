@@ -15,13 +15,16 @@ public class BuildJsonServiceImpl implements BuildJsonService {
         return new MyResponse(country, category, responseFrom.getArticles());
     }
 
+
     public MyResponse buildMyResponseBySearchWord(String country, String searchWord, Response responseFrom) {
 
         ArrayList<Article> articleList = responseFrom.getArticles();
         ArrayList<Article> articleListSelection = new ArrayList<>();
 
         for (Article article : articleList) {
+
             if (article.toString().toLowerCase().contains(searchWord.toLowerCase())) {
+
                 articleListSelection.add(article);
             }
         }

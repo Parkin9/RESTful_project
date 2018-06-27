@@ -33,6 +33,7 @@ public class GetJsonServiceImpl implements GetJsonService {
                                                 + API_KEY, Response.class);
     }
 
+
     public Response listArticles(String country) {
 
         RestTemplate restTemplate = new RestTemplate();

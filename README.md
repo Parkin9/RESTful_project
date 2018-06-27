@@ -8,4 +8,4 @@ BUILD'n'RUN project<br/>
 
 - For Windows:<br/>
 1) Open a project's main folder in a console.<br/>
-2) Use a command: "./mvnw.cmd spring-boot:run".
+2) Use a command: ".\mvnw.cmd spring-boot:run".

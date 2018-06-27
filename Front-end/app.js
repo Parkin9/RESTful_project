@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // a prototyp of "replaceAll" method. Made for formatting JSON
+    // a prototyp of "replaceAll" method. Made for formatting JSON.
     // Tooked from stuckoverflow.com.
     String.prototype.replaceAll = function(search, replacement) {
         var target = this;
         return target.split(search).join(replacement);
     };
 
-    //var quantityArticles;
     var articlesList;
 
     ////////////////////////////////////////////////////////////////////
@@ -25,26 +24,26 @@ document.addEventListener("DOMContentLoaded", function() {
             success: function (jsonObj) {
 
                 // test function
-                console.log(jsonObj);
+                //console.log(jsonObj);
 
                 articlesList = jsonObj.articles;
 
                 // test function
-                console.log(articlesList);
+                //console.log(articlesList);
 
                 for (var i = 0; i < articlesList.length; i++) {
                     articlesList[i] = JSON.stringify(jsonObj.articles[i]).replaceAll(',', '<br/>');
                 }
 
 
-                // build a table
+                // building a table
                 $('#tr1').html('<tr><th>Country:</th><td>' + jsonObj.country + '</td></tr>');
                 $('#tr2').html('<tr><th>Category:</th><td>all</td></tr>');
 
                 var buildArticlesList = '';
                 var counter = 1;
 
-                for (var i = 0; i < articlesList.length; i++) {
+                for (i = 0; i < articlesList.length; i++) {
                     buildArticlesList += '<tr><th>Article '
                         + counter
                         + ':</th><td>'
@@ -125,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 // test function
                 //console.log(jsonObj);
 
-                //quantityArticles = jsonObj.totalResults;
                 articlesList = jsonObj.articles;
 
                 // test function
@@ -136,14 +134,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
 
-                // build a table
+                // building a table
                 $('#tr1').html('<tr><th>Country:</th><td>' + jsonObj.country + '</td></tr>');
                 $('#tr2').html('<tr><th>Category:</th><td>' + jsonObj.category + '</td></tr>');
 
                 var buildArticlesList = '';
                 var counter = 1;
 
-                for (var i = 0; i < articlesList.length; i++) {
+                for (i = 0; i < articlesList.length; i++) {
                     buildArticlesList += '<tr><th>Article '
                         + counter
                         + ':</th><td>'

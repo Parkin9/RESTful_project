@@ -26,10 +26,10 @@ public class RestApiController {
     public MyResponse showAllArticlesByCategory(@PathVariable String country,
                                                 @PathVariable String category) {
 
-        // download Json from "newsapi.org"
+        // downloading Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country, category);
 
-        // create my Json's response
+        // creating my Json's response
         MyResponse myResponse = buildJsonService.buildMyResponseByCategory(country, category, responseFrom);
 
         return myResponse;
@@ -39,10 +39,10 @@ public class RestApiController {
     public MyResponse showArticlesBySearchWord(@PathVariable String country,
                                                @PathVariable String searchWord) {
 
-        // download Json from "newsapi.org"
+        // downloading Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country);
 
-        // create my Json's response
+        // creating my Json's response
         MyResponse myResponse = buildJsonService.buildMyResponseBySearchWord(country, searchWord, responseFrom);
 
         return myResponse;
