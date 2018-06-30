@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.parkin9.restful_project.model.MyResponse;
 import pl.parkin9.restful_project.model.Response;
-import pl.parkin9.restful_project.service.BuildJsonService;
-import pl.parkin9.restful_project.service.GetJsonService;
+import pl.parkin9.restful_project.service.buildJson.BuildJsonService;
+import pl.parkin9.restful_project.service.getJson.GetJsonService;
 
 @RestController
 @RequestMapping("/api/news")

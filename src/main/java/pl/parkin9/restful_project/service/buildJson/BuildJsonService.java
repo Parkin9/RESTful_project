@@ -1,4 +1,4 @@
-package pl.parkin9.restful_project.service;
+package pl.parkin9.restful_project.service.buildJson;
 
 import pl.parkin9.restful_project.model.MyResponse;
 import pl.parkin9.restful_project.model.Response;

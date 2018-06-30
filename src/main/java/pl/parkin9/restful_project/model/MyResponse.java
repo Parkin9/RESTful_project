@@ -1,23 +1,24 @@
 package pl.parkin9.restful_project.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyResponse {
 
     private String country;
     private String category;
-    private ArrayList<Article> articles;
+    private List<Article> articles;
 
     public MyResponse() {
     }
 
-    public MyResponse(String country, String category, ArrayList<Article> articles) {
+    public MyResponse(String country, String category, List<Article> articles) {
         this.country = country;
         this.category = category;
         this.articles = articles;
     }
 
-    public MyResponse(String country, ArrayList<Article> articles) {
+    public MyResponse(String country, List<Article> articles) {
         this.country = country;
         this.articles = articles;
     }
@@ -38,11 +39,11 @@ public class MyResponse {
         this.category = category;
     }
 
-    public ArrayList<Article> getArticles() {
+    public List<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(ArrayList<Article> articles) {
+    public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
 

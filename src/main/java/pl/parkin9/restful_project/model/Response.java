@@ -1,17 +1,17 @@
 package pl.parkin9.restful_project.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Response {
 
     private String status;
     private int totalResults;
-    private ArrayList<Article> articles;
+    private List<Article> articles;
 
     public Response() {
     }
 
-    public Response(String status, int totalResults, ArrayList<Article> articles) {
+    public Response(String status, int totalResults, List<Article> articles) {
         this.status = status;
         this.totalResults = totalResults;
         this.articles = articles;
@@ -33,11 +33,11 @@ public class Response {
         this.totalResults = totalResults;
     }
 
-    public ArrayList<Article> getArticles() {
+    public List<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(ArrayList<Article> articles) {
+    public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
 
