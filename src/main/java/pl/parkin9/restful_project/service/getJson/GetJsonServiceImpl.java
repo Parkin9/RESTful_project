@@ -19,6 +19,7 @@ public class GetJsonServiceImpl implements GetJsonService {
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+    @Override
     public Response listArticles(String country, String category) {
 
         RestTemplate restTemplate = new RestTemplate();
@@ -34,7 +35,7 @@ public class GetJsonServiceImpl implements GetJsonService {
                                             + connectStrMap.get("apiKey"), Response.class);
     }
 
-
+    @Override
     public Response listArticles(String country) {
 
         RestTemplate restTemplate = new RestTemplate();

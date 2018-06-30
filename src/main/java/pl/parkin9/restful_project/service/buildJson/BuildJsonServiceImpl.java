@@ -21,12 +21,13 @@ public class BuildJsonServiceImpl implements BuildJsonService {
 
 ///////////////////////////////////////////////////////////////////////////////////
 
+    @Override
     public MyResponse buildMyResponseByCategory(String country, String category, Response responseFrom) {
 
         return new MyResponse(country, category, responseFrom.getArticles());
     }
 
-
+    @Override
     public MyResponse buildMyResponseBySearchWord(String country, String searchWord, Response responseFrom) {
 
         List<Article> articleListSelected = searchArticlesBySearchWord.buildArticleListContainsSearchWord(searchWord, responseFrom);
