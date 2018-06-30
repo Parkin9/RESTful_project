@@ -2,6 +2,9 @@ package pl.parkin9.restful_project.service.getJson;
 
 import org.springframework.stereotype.Component;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,11 +12,21 @@ import java.util.Map;
 public class ConnectStringImpl implements ConnectString {
 
     @Override
-    public Map<String, String> getConnectStrMap() {
+    public Map<String, String> getConnectStrMap() throws IOException {
 
+        String filePath = "filesResource/connstring.txt";
+        String serverUri;
+        String apiKey;
         Map<String, String> connectStrMap = new HashMap<>();
-        connectStrMap.put("serverUri", "https://newsapi.org/v2/top-headlines");
-        connectStrMap.put("apiKey", "apiKey=06d5ed0dc471463898148d34dd489b70");
+
+        try (BufferedReader bufferedFile = new BufferedReader(new FileReader(filePath))) {
+
+            serverUri = bufferedFile.readLine();
+            apiKey = bufferedFile.readLine();
+
+            connectStrMap.put("serverUri", serverUri);
+            connectStrMap.put("apiKey", apiKey);
+        }
 
         return connectStrMap;
     }

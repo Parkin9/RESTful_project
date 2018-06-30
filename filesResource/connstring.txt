@@ -1,0 +1,2 @@
+https://newsapi.org/v2/top-headlines
+apiKey=06d5ed0dc471463898148d34dd489b70

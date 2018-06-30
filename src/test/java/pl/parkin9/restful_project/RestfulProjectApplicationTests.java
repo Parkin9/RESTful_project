@@ -1,6 +1,5 @@
 package pl.parkin9.restful_project;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +15,7 @@ import pl.parkin9.restful_project.service.buildJson.SearchArticlesBySearchWord;
 import pl.parkin9.restful_project.service.getJson.ConnectString;
 import pl.parkin9.restful_project.service.getJson.GetJsonService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -69,17 +69,20 @@ public class RestfulProjectApplicationTests {
     }
 
 	@Test
-    public void passIfJsonStatusIsOK() {
+    public void passIfJsonStatusIsOK() throws IOException {
 
 	    assertEquals("ok", getJsonService.listArticles("pl").getStatus());
     }
 
     @Test
-    public void passIfConnectStringIsRight() {
+    public void passIfConnectStringIsRight() throws IOException {
 
         Map<String, String> connectStrMap = connectString.getConnectStrMap();
         assertEquals("https://newsapi.org/v2/top-headlines", connectStrMap.get("serverUri"));
         assertEquals("apiKey=06d5ed0dc471463898148d34dd489b70", connectStrMap.get("apiKey"));
+
+        System.out.println(connectStrMap.get("serverUri"));
+        System.out.println(connectStrMap.get("apiKey"));
     }
 
     @Test

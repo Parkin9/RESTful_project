@@ -7,6 +7,8 @@ import pl.parkin9.restful_project.model.Response;
 import pl.parkin9.restful_project.service.buildJson.BuildJsonService;
 import pl.parkin9.restful_project.service.getJson.GetJsonService;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/api/news")
 public class RestApiController {
@@ -24,7 +26,7 @@ public class RestApiController {
 
     @GetMapping("/{country}/{category}")
     public MyResponse showAllArticlesByCategory(@PathVariable String country,
-                                                @PathVariable String category) {
+                                                @PathVariable String category) throws IOException {
 
         // downloading Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country, category);
@@ -37,7 +39,7 @@ public class RestApiController {
 
     @PostMapping("/{country}/{searchWord}")
     public MyResponse showArticlesBySearchWord(@PathVariable String country,
-                                               @PathVariable String searchWord) {
+                                               @PathVariable String searchWord) throws IOException {
 
         // downloading Json from "newsapi.org"
         Response responseFrom = getJsonService.listArticles(country);
