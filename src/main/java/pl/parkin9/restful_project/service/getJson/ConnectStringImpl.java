@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+ /*
+ * The class prepares the ConnectString to external API.
+ */
+
 @Component
 public class ConnectStringImpl implements ConnectString {
 

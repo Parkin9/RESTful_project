@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-// a class made for adding a header "Access-Control-Allow-Origin" to a response. It's about CORS stuff.
+// The class made for adding a header "Access-Control-Allow-Origin" to the response. It's about CORS stuff.
 // Tooked from stuckoverflow.com.
 
 @Component

@@ -9,6 +9,10 @@ import pl.parkin9.restful_project.model.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+ /*
+ * The class prepares my response's JSON.
+ */
+
 @Service
 public class BuildJsonServiceImpl implements BuildJsonService {
 

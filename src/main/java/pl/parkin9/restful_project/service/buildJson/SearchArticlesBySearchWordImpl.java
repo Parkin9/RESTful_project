@@ -7,6 +7,10 @@ import pl.parkin9.restful_project.model.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+ /*
+ * The class looks if articles contain the Searchword.
+ */
+
 @Component
 public class SearchArticlesBySearchWordImpl implements SearchArticlesBySearchWord {
 

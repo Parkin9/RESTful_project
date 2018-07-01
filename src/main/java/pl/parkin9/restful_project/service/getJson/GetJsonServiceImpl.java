@@ -8,6 +8,10 @@ import pl.parkin9.restful_project.model.Response;
 import java.io.IOException;
 import java.util.Map;
 
+ /*
+ * The class gets the JSON's response from a external API.
+ */
+
 @Service
 public class GetJsonServiceImpl implements GetJsonService {
 
