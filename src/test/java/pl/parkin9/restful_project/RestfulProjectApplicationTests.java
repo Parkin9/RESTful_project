@@ -75,17 +75,6 @@ public class RestfulProjectApplicationTests {
     }
 
     @Test
-    public void passIfConnectStringIsRight() throws IOException {
-
-        Map<String, String> connectStrMap = connectString.getConnectStrMap();
-        assertEquals("https://newsapi.org/v2/top-headlines", connectStrMap.get("serverUri"));
-        assertEquals("apiKey=06d5ed0dc471463898148d34dd489b70", connectStrMap.get("apiKey"));
-
-        System.out.println(connectStrMap.get("serverUri"));
-        System.out.println(connectStrMap.get("apiKey"));
-    }
-
-    @Test
     public void buildJsonServiceTest() {
 
         assertNotNull(buildJsonService);
