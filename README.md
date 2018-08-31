@@ -1,7 +1,7 @@
 # RESTful_project
 
-The simple RESTful application. The app gets a Json from NewsApi.org api, formats a little and sends it as a Json too.
-The project contains a little Front-end app. It displays provided Json.
+The simple RESTful microservice. It gets a Json from NewsApi.org api, formats a little and sends it as a Json too.
+The project contains a little Front-end client. It displays provided Json.
 
 BUILD'n'RUN project<br/>
 - For Unix:<br/>
